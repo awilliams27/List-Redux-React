@@ -37,3 +37,7 @@
     border-left: 1% solid #D4A464;
     padding: 2%;
 }
+
+.todo-list ~ .todo-list {
+  background: #F8BBD0;
+}

@@ -5,10 +5,18 @@ import VisibleTodoList from './containers/VisibleTodoList'
 import './App.css';
 
 const App = () => (
-  <div className="todo-list">
-    <AddTodo />
-    <VisibleTodoList />
-    <Footer />
+	<div>
+	  <div className="todo-list">
+	    <AddTodo listID={1} />
+	    <VisibleTodoList listID={1}/>
+	    <Footer />
+	  </div>
+
+	  <div className="todo-list">
+	    <AddTodo listID={2} />
+	    <VisibleTodoList listID={2}/>
+	    <Footer />
+	  </div>
   </div>
 )
 
