@@ -29,12 +29,8 @@
 
 
 .todo-list {
-  min-width: 240px;
-    float: left;
-    width: 18%;
     background: #82B1FF;
     margin: 10px 1.5% 0 1.5%;
-    border-left: 1% solid #D4A464;
     padding: 2%;
 }
 

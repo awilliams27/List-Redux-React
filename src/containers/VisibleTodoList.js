@@ -3,12 +3,6 @@ import { connect } from 'react-redux'
 import { toggleTodo, removeTodo } from '../actions'
 import TodoList from '../components/TodoList'
 
-// let curListID = 0;
-
-// let VisibleTodoList = ({listID}) => {
-//   curListID = listID;
-// }
-
 const getVisibleTodos = (todos, filter, listID) => {
   switch (filter) {
     case 'SHOW_ALL':
@@ -20,9 +14,9 @@ const getVisibleTodos = (todos, filter, listID) => {
   }
 }
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state, {listID}) => {
   return {
-    todos: getVisibleTodos(state.todos, state.visibilityFilter, props.listID)
+    todos: getVisibleTodos(state.todos, state.visibilityFilter, listID)
   }
 }
 
