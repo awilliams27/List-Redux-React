@@ -7,17 +7,6 @@ const todoLists = (state = [], action) => {
 					id: action.id
 				}
 			]
-		case 'ADD_TO_MASTER':
-			return[
-				...state,
-				{
-					id: action.id,
-					text: action.text,
-					listID: action.listID,
-					completed: false
-				}
-
-			]
 		default:
 			return state;
 	}

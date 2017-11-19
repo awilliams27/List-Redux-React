@@ -4,6 +4,7 @@ import {Row, Col } from 'react-flexbox-grid';
 import Footer from './Footer'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
+import MasterTodoListContainer from '../containers/MasterTodoListContainer'
 
 
 const ListPresenter = ({todoLists, onAddListClick}) => (
@@ -26,7 +27,9 @@ const ListPresenter = ({todoLists, onAddListClick}) => (
 				</Col>
 			</Row>
 		</Col>
+		<MasterTodoListContainer />
  	</Row>
+
 )
 
 ListPresenter.PropTypes = {

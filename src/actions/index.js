@@ -37,3 +37,25 @@ export const createNewList = () => {
     id: nextListID++
   }
 }
+
+export const addTodoToMaster = (id, text) => {
+  return {
+    type: 'ADD_TODO_TO_MASTER',
+    id,
+    text
+  }
+}
+
+export const toggleMaster = (id) => {
+  return {
+    type: 'TOGGLE_MASTER_TODO',
+    id
+  }
+}
+
+export const removeTodoFromMaster = (id) => {
+  return {
+    type: 'REMOVE_MASTER_TODO',
+    id
+  }
+}
