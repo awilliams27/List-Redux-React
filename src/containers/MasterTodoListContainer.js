@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleMaster, removeTodoFromMaster, addToMaster } from '../actions'
+import { toggleMaster, removeTodoFromMaster, addToMaster, createNewList } from '../actions'
 import TodoList from '../components/TodoList'
 import MasterTodoList from '../components/MasterTodoList'
 
@@ -16,6 +16,9 @@ const mapDispatchToProps = dispatch => {
     },
     onRemoveTodoClick: id => {
       dispatch(removeTodoFromMaster(id))
+    },
+    onAddListClick: () => {
+      dispatch(createNewList())
     }
   }
 }

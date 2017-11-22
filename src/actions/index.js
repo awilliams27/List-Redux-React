@@ -1,10 +1,9 @@
-let nextTodoId = 0;
-let nextListID = 0;
+import {v4} from 'node-uuid';
 
 export const addTodo = (text, listID) => {
   return {
     type: 'ADD_TODO',
-    id: nextTodoId++,
+    id: v4(),
     text,
     listID
   }
@@ -34,7 +33,7 @@ export const toggleTodo = id => {
 export const createNewList = () => {
   return {
     type: 'ADD_TODO_LIST',
-    id: nextListID++
+    id: v4()
   }
 }
 

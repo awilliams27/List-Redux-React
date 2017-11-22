@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import RaisedButton from 'material-ui/RaisedButton'
 import TrashIcon from 'material-ui/svg-icons/action/delete';
 import {List, ListItem} from 'material-ui/List';
 import Checkbox from 'material-ui/Checkbox';
@@ -12,8 +11,7 @@ const Todo = ({ onTodoClick, id, completed, text, onRemoveTodoClick }) => (
     style={{
       color: completed ? 'lightgray' : 'black',
       textDecoration: completed ? 'line-through' : 'none',
-      marginBottom: '5px',
-      width: '100%'
+      marginBottom: '5px'
     }}
     primaryText={text}
     rightIconButton={<IconButton onClick={() => onRemoveTodoClick(id)} ><TrashIcon /></IconButton>}

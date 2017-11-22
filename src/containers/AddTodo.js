@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField';
-
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 class AddTodo extends Component {
   constructor(props) {
@@ -51,7 +52,9 @@ class AddTodo extends Component {
               value={this.state.value}
               onChange={this.handleChange}
             />
-          <RaisedButton label="Add Todo" primary={true}  type="submit" />
+          <FloatingActionButton secondary={true} type="submit">
+            <ContentAdd />
+          </FloatingActionButton>
         </form>
       </div>
     )

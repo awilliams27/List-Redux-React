@@ -14,7 +14,7 @@ class TodoList extends Component {
             <Todo key={index} {...todo} onTodoClick={onTodoClick} onRemoveTodoClick={onRemoveTodoClick} />
           ))}
         </List>
-        <RaisedButton label="Primary" primary={true} onClick={() => addToMasterClick(masterTodos)}>Add to Master List</RaisedButton>
+        <RaisedButton label="Add to Master List" primary={true} onClick={() => addToMasterClick(masterTodos)}></RaisedButton>
       </div>
     );
   }

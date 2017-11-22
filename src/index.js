@@ -5,8 +5,13 @@ import { createStore } from 'redux'
 import todoApp from './reducers'
 import App from './App'
 
-let store = createStore(todoApp)
 
+const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {}
+
+let store = createStore(todoApp, persistedState)
+store.subscribe(()=>{
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+})
 render(
   <Provider store={store}>
     <App />

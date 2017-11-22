@@ -8,14 +8,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onAddListClick: () => {
-    	dispatch(createNewList())
-    }
-  }
-}
-
-const ListContainer = connect(mapStateToProps, mapDispatchToProps)(ListPresenter)
+const ListContainer = connect(mapStateToProps)(ListPresenter)
 
 export default ListContainer
