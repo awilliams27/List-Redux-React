@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
+import RaisedButton from 'material-ui/RaisedButton';
+import List from 'material-ui/List';
 
-const TodoList = ({ todos, onTodoClick, onRemoveTodoClick, addToMasterClick, masterTodos }) => (
-  <div>
-    <ul>
-      {todos.map((todo, index) => (
-        <Todo key={index} {...todo} onTodoClick={onTodoClick} onRemoveTodoClick={onRemoveTodoClick} />
-      ))}
-    </ul>
-    <button onClick={() => addToMasterClick(masterTodos)}>Add to Master List</button>
-  </div>
-)
+class TodoList extends Component {
+  render() {
+    const { todos, onTodoClick, onRemoveTodoClick, addToMasterClick, masterTodos } = this.props;
+    return( 
+      <div>
+        <List>
+          {todos.map((todo, index) => (
+            <Todo key={index} {...todo} onTodoClick={onTodoClick} onRemoveTodoClick={onRemoveTodoClick} />
+          ))}
+        </List>
+        <RaisedButton label="Primary" primary={true} onClick={() => addToMasterClick(masterTodos)}>Add to Master List</RaisedButton>
+      </div>
+    );
+  }
+}
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(

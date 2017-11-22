@@ -26,14 +26,3 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-
-.todo-list {
-    background: #82B1FF;
-    margin: 10px 1.5% 0 1.5%;
-    padding: 2%;
-}
-
-.todo-list ~ .todo-list {
-  background: #F8BBD0;
-}
