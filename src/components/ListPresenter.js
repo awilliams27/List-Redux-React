@@ -16,6 +16,15 @@ const style = {
 const ListPresenter = ({todoLists}) => (
 	<Row>
 	    <Col xs={12} sm={8}>
+	    	<Row>
+				<Paper style={style} className="todo-list" zDepth={4}>
+					<Col xs={12} className="controls">
+						<MasterTodoListContainer />
+					</Col>
+				</Paper>
+			</Row>
+		</Col>
+		<Col xs={12} sm={4}>
 			<Row>
 				{todoLists.map((list, index) => (
 					<Paper style={style} className="todo-list" zDepth={4}>
@@ -25,15 +34,6 @@ const ListPresenter = ({todoLists}) => (
 						</Col>
 					</Paper>
 				))}
-			</Row>
-		</Col>
-		<Col xs={12} sm={4}>
-			<Row>
-				<Col xs className="controls">
-					<Paper style={style} className="todo-list" zDepth={4}>
-						<MasterTodoListContainer />
-					</Paper>
-				</Col>
 			</Row>
 		</Col>
  	</Row>

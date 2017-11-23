@@ -1,7 +1,7 @@
 {
   "name": "packing-list-react",
   "version": "0.1.0",
-  "homepage": "https://awilliams27.github.io/React-Game-of-Life/",
+  "homepage": "https://awilliams27.github.io/List-Redux-React/",
   "private": true,
   "dependencies": {
     "react": "^16.1.1",
