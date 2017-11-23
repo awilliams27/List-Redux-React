@@ -15,7 +15,7 @@ const style = {
 
 const ListPresenter = ({todoLists}) => (
 	<Row>
-	    <Col xs={12} sm={8}>
+	    <Col xs={12} sm={4}>
 	    	<Row>
 				<Paper style={style} className="todo-list" zDepth={4}>
 					<Col xs={12} className="controls">
@@ -24,7 +24,7 @@ const ListPresenter = ({todoLists}) => (
 				</Paper>
 			</Row>
 		</Col>
-		<Col xs={12} sm={4}>
+		<Col xs={12} sm={8}>
 			<Row>
 				{todoLists.map((list, index) => (
 					<Paper style={style} className="todo-list" zDepth={4}>
