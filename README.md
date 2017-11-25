@@ -1,4 +1,4 @@
-GH pages hosted site can be viewed [here] (https://awilliams27.github.io/List-Redux-React) .
+GH pages hosted site can be viewed [here](https://awilliams27.github.io/List-Redux-React) .
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
