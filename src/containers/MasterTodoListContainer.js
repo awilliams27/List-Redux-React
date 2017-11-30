@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleMaster, removeTodoFromMaster, addToMaster, createNewList, openSnackbar, closeSnackbar } from '../actions'
-import TodoList from '../components/TodoList'
+import { toggleMaster, removeTodoFromMaster, createNewList, openSnackbar, closeSnackbar } from '../actions'
 import MasterTodoList from '../components/MasterTodoList'
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
 

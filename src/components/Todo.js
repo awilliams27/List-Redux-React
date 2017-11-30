@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import TrashIcon from 'material-ui/svg-icons/action/delete';
-import {List, ListItem} from 'material-ui/List';
+import {ListItem} from 'material-ui/List';
 import Checkbox from 'material-ui/Checkbox';
 import IconButton from 'material-ui/IconButton'
 
@@ -15,8 +15,8 @@ const Todo = ({ onTodoClick, id, completed, text, onRemoveTodoClick }) => (
     }}
     primaryText={text}
     rightIconButton={<IconButton onClick={() => onRemoveTodoClick(id)} ><TrashIcon /></IconButton>}
-  >    
-  
+  >
+
   </ListItem>
 )
 

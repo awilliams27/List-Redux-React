@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
-import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
@@ -30,7 +29,7 @@ class AddTodo extends Component {
           value: '',
         });
       };
-  
+
   render() {
     const {dispatch, listID} = this.props;
     let input = this.state.value

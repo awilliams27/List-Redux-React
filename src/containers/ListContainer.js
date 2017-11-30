@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { createNewList} from '../actions'
 import ListPresenter from '../components/ListPresenter'
 
 const mapStateToProps = (state) => {

@@ -23,14 +23,7 @@ class TodoList extends Component {
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      completed: PropTypes.bool.isRequired,
-      text: PropTypes.string.isRequired
-    }).isRequired
-  ).isRequired,
-  masterTodos: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired,
       text: PropTypes.string.isRequired
     }).isRequired
@@ -38,7 +31,6 @@ TodoList.propTypes = {
   onTodoClick: PropTypes.func.isRequired,
   onRemoveTodoClick: PropTypes.func.isRequired,
   addToMasterClick: PropTypes.func.isRequired
-
 }
 
 export default TodoList

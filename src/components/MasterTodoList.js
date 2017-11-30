@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
 import List from 'material-ui/List'
@@ -7,14 +7,7 @@ import TextField from 'material-ui/TextField'
 import Snackbar from 'material-ui/Snackbar'
 
 
-class MasterTodoList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const {snackbarOpen, masterList, onTodoClick, onRemoveTodoClick, onAddListClick} = this.props;
-    return (
+const MasterTodoList = ({onUndo, closeSnackbar, snackbarOpen, masterList, onTodoClick, onRemoveTodoClick, onAddListClick}) => (
       <div>
         <TextField hintText="Master List Title" />
         <RaisedButton label="Create New List" primary={true} className="addList" onClick={() => onAddListClick()}></RaisedButton>
@@ -29,13 +22,11 @@ class MasterTodoList extends Component {
               message={"List added to master list"}
               action="undo"
               autoHideDuration={4000}
-              onActionTouchTap={() => {this.props.onUndo(); this.props.closeSnackbar()}}
-              onRequestClose={this.props.closeSnackbar}
+              onActionTouchTap={() => {onUndo(); closeSnackbar()}}
+              onRequestClose={closeSnackbar}
             />
       </div>
-    )
-  }
-}
+)
 
 MasterTodoList.propTypes = {
   masterList: PropTypes.arrayOf(
@@ -48,7 +39,8 @@ MasterTodoList.propTypes = {
   onTodoClick: PropTypes.func.isRequired,
   onRemoveTodoClick: PropTypes.func.isRequired,
   onAddListClick: PropTypes.func.isRequired,
-  snackbarOpen: PropTypes.bool.isRequired
+  snackbarOpen: PropTypes.bool.isRequired,
+  onUndo: PropTypes.func.isRequired
 }
 
 export default MasterTodoList

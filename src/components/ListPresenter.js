@@ -5,8 +5,6 @@ import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
 import MasterTodoListContainer from '../containers/MasterTodoListContainer'
 import Paper from 'material-ui/Paper';
-import RaisedButton from 'material-ui/RaisedButton'
-
 
 const style = {
   margin: 12,
@@ -27,8 +25,8 @@ const ListPresenter = ({todoLists}) => (
 		<Col xs={12} sm={8}>
 			<Row>
 				{todoLists.map((list, index) => (
-					<Paper style={style} className="todo-list" zDepth={4}>
-						<Col xs={12} key={index}>
+					<Paper style={style} className="todo-list" zDepth={4} key={index}>
+						<Col xs={12}>
 							<AddTodo listID={list.id} />
 							<VisibleTodoList listID={list.id} />
 						</Col>
@@ -43,7 +41,7 @@ const ListPresenter = ({todoLists}) => (
 ListPresenter.PropTypes = {
 	todoLists: PropTypes.arrayOf(
 			PropTypes.shape({
-				id: PropTypes.number.isRequired,
+				id: PropTypes.string.isRequired,
 			}).isRequired
 		).isRequired,
 	onAddListClick: PropTypes.func.isRequired

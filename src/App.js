@@ -1,8 +1,6 @@
 import React from 'react'
-import AddTodo from './containers/AddTodo'
-import VisibleTodoList from './containers/VisibleTodoList'
 import ListContainer from './containers/ListContainer'
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid } from 'react-flexbox-grid';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './App.css';
@@ -12,7 +10,7 @@ const App = () => (
 		<Grid fluid>
 			<ListContainer />
 		 </Grid>
-	</MuiThemeProvider>	 
+	</MuiThemeProvider>
 )
 
 export default App
