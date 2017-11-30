@@ -1,20 +1,17 @@
+import undoable from 'redux-undo'
+
 const masterList = (state = [], action) => {
 	switch(action.type) {
-		case 'ADD_TODO_TO_MASTER':
-			return[
+		case 'ADD_TODOS_TO_MASTER':
+			return [
 				...state,
-				{
-					id: action.id,
-					text: action.text,
-					completed: false
-				}
-
+				...action.items
 			]
 		case 'REMOVE_MASTER_TODO':
         	return state.filter(({ id }) => id !== action.id)
-    	case 'TOGGLE_MASTER_TODO':
+    case 'TOGGLE_MASTER_TODO':
 	      return state.map(todo =>
-	        (todo.id === action.id) 
+	        (todo.id === action.id)
 	          ? {...todo, completed: !todo.completed}
 	          : todo
 	      )
@@ -24,4 +21,6 @@ const masterList = (state = [], action) => {
 	}
 }
 
-export default masterList
+const undoableMasterList = undoable(masterList);
+
+export default undoableMasterList

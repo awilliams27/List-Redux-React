@@ -6,15 +6,15 @@ import List from 'material-ui/List';
 
 class TodoList extends Component {
   render() {
-    const { todos, onTodoClick, onRemoveTodoClick, addToMasterClick, masterTodos } = this.props;
-    return( 
+    const { todos, onTodoClick, onRemoveTodoClick, addToMasterClick } = this.props;
+    return(
       <div>
         <List>
           {todos.map((todo, index) => (
             <Todo key={index} {...todo} onTodoClick={onTodoClick} onRemoveTodoClick={onRemoveTodoClick} />
           ))}
         </List>
-        <RaisedButton label="Add to Master List" primary={true} onClick={() => addToMasterClick(masterTodos)}></RaisedButton>
+        <RaisedButton label="Add to Master List" primary={true} onClick={() => {this.props.openSnackbar(); addToMasterClick(todos) }}></RaisedButton>
       </div>
     );
   }

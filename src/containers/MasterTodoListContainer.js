@@ -1,25 +1,25 @@
 import { connect } from 'react-redux'
-import { toggleMaster, removeTodoFromMaster, addToMaster, createNewList } from '../actions'
+import { toggleMaster, removeTodoFromMaster, addToMaster, createNewList, openSnackbar, closeSnackbar } from '../actions'
 import TodoList from '../components/TodoList'
 import MasterTodoList from '../components/MasterTodoList'
+import { ActionCreators as UndoActionCreators } from 'redux-undo'
+
 
 const mapStateToProps = (state) => {
   return {
-    masterList: state.masterList
+    masterList: state.masterList.present,
+    snackbarOpen: state.ui.snackbarOpen
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onTodoClick: id => {
-      dispatch(toggleMaster(id))
-    },
-    onRemoveTodoClick: id => {
-      dispatch(removeTodoFromMaster(id))
-    },
-    onAddListClick: () => {
-      dispatch(createNewList())
-    }
+    onTodoClick: id => dispatch(toggleMaster(id)),
+    onRemoveTodoClick: id => dispatch(removeTodoFromMaster(id)),
+    onAddListClick: () => dispatch(createNewList()),
+    onUndo: () => dispatch(UndoActionCreators.undo()),
+    openSnackbar: () => dispatch(openSnackbar()),
+    closeSnackbar: () => dispatch(closeSnackbar())
   }
 }
 

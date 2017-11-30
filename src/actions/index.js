@@ -37,11 +37,10 @@ export const createNewList = () => {
   }
 }
 
-export const addTodoToMaster = (id, text) => {
+export const addTodoToMaster = (items) => {
   return {
-    type: 'ADD_TODO_TO_MASTER',
-    id,
-    text
+    type: 'ADD_TODOS_TO_MASTER',
+    items
   }
 }
 
@@ -56,5 +55,17 @@ export const removeTodoFromMaster = (id) => {
   return {
     type: 'REMOVE_MASTER_TODO',
     id
+  }
+}
+
+export const openSnackbar = () => {
+  return {
+    type: 'OPEN_SNACKBAR'
+  }
+}
+
+export const closeSnackbar = () => {
+  return {
+    type: 'CLOSE_SNACKBAR'
   }
 }

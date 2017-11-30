@@ -1,34 +1,27 @@
 import { connect } from 'react-redux'
-import { toggleTodo, removeTodo, addTodoToMaster } from '../actions'
+import { toggleTodo, removeTodo, addTodoToMaster, openSnackbar } from '../actions'
 import TodoList from '../components/TodoList'
 
-const getVisibleTodos = (todos, filter, listID) => {
-  switch (filter) {
-    case 'SHOW_ALL':
-      return todos.filter(t => t.listID === listID)
-  }
+const getListTodos = (todos, listID) => {
+    return todos.filter(t => t.listID === listID)
 }
 
 const mapStateToProps = (state, {listID}) => {
   return {
-    todos: getVisibleTodos(state.todos, 'SHOW_ALL', listID),
-    masterTodos: getVisibleTodos(state.todos, 'SHOW_ALL', listID)
+    todos: getListTodos(state.todos, listID)
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onTodoClick: id => {
-      dispatch(toggleTodo(id))
-    },
-    onRemoveTodoClick: id => {
-      dispatch(removeTodo(id))
-    },
-    addToMasterClick: todoList => {
-      todoList.forEach(function(todo) {
-        dispatch(addTodoToMaster(todo.id, todo.text))
-      });
-    }
+    onTodoClick: id => dispatch(toggleTodo(id)),
+    onRemoveTodoClick: id => dispatch(removeTodo(id)),
+    addToMasterClick: todoList => dispatch(addTodoToMaster(todoList.map(item => {
+      item = {...item};
+      item.completed = false;
+      return item;
+    }))),
+    openSnackbar: () => dispatch(openSnackbar())
   }
 }
 

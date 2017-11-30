@@ -8,7 +8,7 @@ import App from './App'
 
 const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {}
 
-let store = createStore(todoApp, persistedState)
+let store = createStore(todoApp, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 store.subscribe(()=>{
   localStorage.setItem('reduxState', JSON.stringify(store.getState()))
 })
